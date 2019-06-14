@@ -13,7 +13,7 @@ struct node
     }
 };
 
-##InOrder
+**InOrder**
 
  void traversal_trick(node *root) 
 {
