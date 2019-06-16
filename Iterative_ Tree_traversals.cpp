@@ -36,7 +36,7 @@ struct node
         	S.push(cur->right);
         else 
         	S.pop();
-        cnt[cur]++;
+        cnt[cur]++; 
     }
 }
 
