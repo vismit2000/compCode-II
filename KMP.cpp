@@ -1,4 +1,3 @@
-//just a comment
 #include <bits/stdc++.h>
 using namespace std;
 
