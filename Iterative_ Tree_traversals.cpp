@@ -15,6 +15,8 @@ struct node
 
 ##InOrder
 
+unordered_map<node*, int> cnt;
+
  void traversal_trick(node *root) 
 {
     stack<node*> S;
