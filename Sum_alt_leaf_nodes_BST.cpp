@@ -39,6 +39,15 @@ public:
         }
         return root;
     }
+     
+    Node *search(Node *root, int data)
+    {
+        if(root == NULL || data == root->data)
+            return root;
+        if(data < root->data)
+            return search(root->left, data);
+        return search(root->right, data);
+    }
     
     void inorder(Node *root)
     {
