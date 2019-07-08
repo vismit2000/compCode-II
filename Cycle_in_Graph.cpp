@@ -1,5 +1,5 @@
 int n;
-vector<vector<int>> adj;
+vector<vector<int> > adj;
 vector<char> color;
 vector<int> parent;
 int cycle_start, cycle_end;
