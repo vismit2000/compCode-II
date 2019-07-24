@@ -29,7 +29,7 @@ bool dfs(int v)
             return true;
         }
     }
-    color[v] == 2;
+    color[v] = 2;
     return false;
 }
 
