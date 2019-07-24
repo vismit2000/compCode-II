@@ -1,6 +1,6 @@
-//Given a directed graph containing cycle. Find minimum distance of every node from cycle.
+//Given an undirected graph containing cycle. Find minimum distance of every node from cycle.
 
-//Concepts used : Finding cycle in a directed graph, multi-source BFS using priority queue
+//Concepts used : Finding cycle in an undirected graph, multi-source BFS using priority queue
 
 #include <bits/stdc++.h>
 using namespace std;
