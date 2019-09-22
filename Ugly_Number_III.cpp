@@ -1,4 +1,11 @@
-This problem can easily solved by binary-search by defining the predicate: "Given N, how many numbers upto N are divisible by A or B or C"
+// https://leetcode.com/problems/ugly-number-iii/
+
+/*Write a program to find the n-th ugly number.
+Ugly numbers are positive integers which are divisible by a or b or c.
+*/
+
+This problem can easily solved by binary-search by defining the predicate: 
+"Given N, how many numbers upto N are divisible by A or B or C"
 
 The predicate can be evaluated by inclusion-exclusion principle:
 
@@ -14,10 +21,7 @@ The predicate can be evaluated by inclusion-exclusion principle:
 	
 Furthermore LCM(A, B) can be computed as LCM(A, B) = (A*B) / GCD(A, B)
 
-For problem solving technique using binary search predicate, refer to following awesome article:
-	https://www.topcoder.com/community/competitive-programming/tutorials/binary-search
 
-```
 typedef long long ll;
 class Solution {
 public:
@@ -51,4 +55,3 @@ public:
         return ans;
     }
 };
-```
