@@ -1,16 +1,17 @@
 // https://leetcode.com/problems/maximum-profit-in-job-scheduling/
 
 class Solution {
-public:
+private:
     /* A Binary Search based function to find the latest job (before current job) that doesn't conflict with current job.  "index" is index of the current job.  This function returns -1 if all jobs before index conflict with it. The array jobs[] is sorted in increasing order of finish time.
     */
-    int binarySearch(vector < vector < int > > jobs, int index) 
+    int binarySearch(vector < vector < int > > &jobs, int index) 
     { 
-        int lo = 0, hi = index - 1; 
+        int lo = 0, hi = index - 1, mid; 
 
         while (lo <= hi) 
         { 
-            int mid = lo + (hi - lo)/2; 
+            mid = lo + (hi - lo)/2; 
+            
             if (jobs[mid][0] <= jobs[index][1]) 
             { 
                 if (jobs[mid + 1][0] <= jobs[index][1]) 
@@ -24,6 +25,7 @@ public:
         return -1; 
     } 
     
+public:
     int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) 
     {
         int n = startTime.size();
