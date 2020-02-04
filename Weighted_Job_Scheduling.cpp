@@ -2,7 +2,9 @@
 
 class Solution {
 private:
-    /* A Binary Search based function to find the latest job (before current job) that doesn't conflict with current job.  "index" is index of the current job.  This function returns -1 if all jobs before index conflict with it. The array jobs[] is sorted in increasing order of finish time.
+    /* A Binary Search based function to find the latest job (before current job) that doesn't conflict with current job.  
+    "index" is index of the current job.  This function returns -1 if all jobs before index conflict with it. The array 
+    jobs[] is sorted in increasing order of finish time.
     */
     int binarySearch(vector < vector < int > > &jobs, int index) 
     { 
