@@ -1,0 +1,6 @@
+## Round-A
+
+- Score: 85/100
+- Rank: 927
+
+Problen=m B:Plates - Large testcase couldn't be solved (Approach: DP)
