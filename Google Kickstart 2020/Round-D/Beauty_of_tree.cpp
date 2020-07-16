@@ -6,6 +6,8 @@ using namespace std;
 #define MOD 1000000007
 #define boost ios_base ::sync_with_stdio(0); cin.tie(0);
 
+// Binary Lifting Technique
+
 void calculateSparse(vector < vector < int > > &table, int height, int u, int v) { 
     table[v][0] = u; 
     for (int i = 1; i <= height; i++){ 
