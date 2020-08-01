@@ -24,6 +24,7 @@ must be played before a match between two other players. We can find the edges b
 We can then do a topological sort whilst checking for the presence of cycles. If there is a cycle present, then its impossible as we cannot schedule the games in such a way as
 to satisfy the ordering required. If there is no cycle, we can greedily select all the nodes with in-degree = 0 and remove them, while simultaneously updating the nodes to 
 which they are directed towards and decreasing their in-degree by 1. The number of times we have to do this is our answer.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
