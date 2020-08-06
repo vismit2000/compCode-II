@@ -10,7 +10,7 @@ int main() {
     ll n, m;
     cin >> n >> m;
     char A[n][m];
-    ll dp[n][m];
+    ll dp[n][m];   // dp[i][j] denotes the minimum No. of operations required to move from (i, j) to (n-1, m-1)
     
     memset(dp, INF, sizeof(dp));
     
