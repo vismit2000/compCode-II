@@ -1,3 +1,4 @@
+// https://www.thetopsites.net/article/58803071.shtml
 /*
 Deterministic finite automaton(DFA) is a finite state machine that accepts/rejects finite strings of symbols and only produces a unique computation (or run) of the automation for each input string.
 
