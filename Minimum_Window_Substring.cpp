@@ -1,6 +1,6 @@
 //https://leetcode.com/problems/minimum-window-substring/
 
-Very good explanation : https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
+// Very good explanation : https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
 
 #define INF 0x3f3f3f3f
 
