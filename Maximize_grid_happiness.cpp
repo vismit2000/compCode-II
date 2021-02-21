@@ -37,9 +37,6 @@ public:
         int left = get(prevN, 0);  // get left bit -> which is at (0)th
 
         if (iCount > 0) {  // put intro guy at current cell
-            int temp = prevN;
-            prevN = set(prevN, 1);  // set new-coming bit to 1
-
             int addOn = 120;
 
             if (x - 1 >= 0 && up != 0) {
@@ -47,21 +44,15 @@ public:
                 if (up == 1) addOn -= 30;
                 else addOn += 20;
             }
-
             if (y - 1 >= 0 && left != 0) {
                 addOn -= 30;
                 if (left == 1) addOn -= 30;
                 else addOn += 20;
-            }
-
-            res = max(res, solve(x, y + 1, iCount - 1, eCount, prevN) + addOn);
-            prevN = temp;  // set it back
+            }     
+            res = max(res, solve(x, y + 1, iCount - 1, eCount, set(prevN, 1)) + addOn);
         }
 
         if (eCount > 0) {  // put extro guy at current cell
-            int temp = prevN;
-            prevN = set(prevN, 2);  // set new-coming bit to 2
-
             int addOn = 40;
 
             if (x - 1 >= 0 && up != 0) {
@@ -69,18 +60,13 @@ public:
                 if (up == 1) addOn -= 30;
                 else addOn += 20;
             }
-
             if (y - 1 >= 0 && left != 0) {
                 addOn += 20;
                 if (left == 1) addOn -= 30;
                 else addOn += 20;
             }
-
-            res = max(res, solve(x, y + 1, iCount, eCount - 1, prevN) + addOn);
-
-            prevN = temp;  // set it back
+            res = max(res, solve(x, y + 1, iCount, eCount - 1, set(prevN, 2)) + addOn);
         }
-
         return dp[x][y][iCount][eCount][prevN] = res;
     }
     
