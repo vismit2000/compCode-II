@@ -2,32 +2,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N = 1000000;
-vector < int > p;
+const int N = 1000005;
+vector < bool > p;
 
-//PRIME SIEVE & OPTIMISATIONS
-vector<int> primeSieve(int n){   
-    p.assign(N, 0);
-    p[2] = 1;
+vector <int> primeSieve(){   
+    p.assign(N, true);
 
-    // Mark all odd numbers as Prime (Initialisation)
-    for(int i = 3; i <= n; i += 2)
-        p[i] = 1;
-
-    //Sieve Login to mark non prime numbers as 0
-    //1. Optimsation : Iterate only over odd Numbers
-    for(int i = 3; i <= n; i += 2){    
-        if(p[i]){
-            //Mark all the multiples of that number as not prime.
-            //2. Optimisation Take a jump of 2i starting from i*i
-            for(int j = i*i; j <= n; j += 2*i)
-                p[j] = 0;
-        }
-    }
+    for(int i = 2; i*i < N; i++)  
+        if(p[i])
+            for(int j = 2*i; j < N; j += i) p[j] = false;
+    
     vector < int > primes;
     primes.push_back(2);
     
-    for(int i = 3; i <= n; i += 2)
+    for(int i = 3; i < N; i += 2)
         if(p[i] == 1)
             primes.push_back(i);
 
@@ -40,7 +28,7 @@ vector<int> factorize(long m, vector<int> &primes){
     int i = 0, p = primes[0];
 
     while(p*p <= m){
-        if(m%p==0){
+        if(m % p == 0){
             factors.push_back(p);
             while(m % p == 0)
                 m = m/p;
@@ -55,7 +43,7 @@ vector<int> factorize(long m, vector<int> &primes){
 }
 
 int main(){
-    vector< int > primes = primeSieve(10000);
+    vector< int > primes = primeSieve();
     long num; cin >> num;
 
     vector < int > factors = factorize(num, primes);
