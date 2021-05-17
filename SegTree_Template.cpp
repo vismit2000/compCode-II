@@ -12,8 +12,7 @@ ll sum(ll a, ll b){
     return a + b;
 }
 
-void updateRangeLazy(ll index, ll s, ll e, ll rs, ll re, ll inc)
-{
+void updateRangeLazy(ll index, ll s, ll e, ll rs, ll re, ll inc) {
     if(lazy[index] != 0){
         tree[index] += lazy[index];
         if(s != e){
@@ -35,15 +34,14 @@ void updateRangeLazy(ll index, ll s, ll e, ll rs, ll re, ll inc)
         return;
     }
         
-    ll mid = (s+e)/2;
+    ll mid = (s + e) / 2;
     updateRangeLazy(2*index + 1, s, mid, rs, re, inc);
     updateRangeLazy(2*index + 2, mid + 1, e, rs, re, inc);
     tree[index] = sum(tree[2*index + 1], tree[2*index + 2]);
     return;
 }
 
-ll queryRangeLazy(ll index, ll s, ll e, ll rs, ll re)
-{
+ll queryRangeLazy(ll index, ll s, ll e, ll rs, ll re) {
     if(lazy[index] != 0){
         tree[index] += lazy[index];
         if(s != e){
@@ -55,10 +53,11 @@ ll queryRangeLazy(ll index, ll s, ll e, ll rs, ll re)
     
     if(re < s || rs > e)
         return 0;
+
     if(s >= rs && e <= re)
         return tree[index];
     
-    ll mid = (s+e)/2;
+    ll mid = (s + e) / 2;
     ll left = queryRangeLazy(2*index + 1, s, mid, rs, re);
     ll right = queryRangeLazy(2*index + 2, mid + 1, e, rs, re);
     return sum(left, right);
@@ -73,7 +72,7 @@ void buildTree(vector < ll > &a, ll index, ll s, ll e)
     if(s > e)
         return;
 
-    ll mid = (s+e)/2;
+    ll mid = (s + e) / 2;
     buildTree(a, 2*index + 1, s, mid);
     buildTree(a, 2*index + 2, mid + 1, e);
 
