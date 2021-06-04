@@ -1,4 +1,7 @@
-// https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/
+/*
+PROBLEM: https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/
+Cleaner solution: https://leetcode.ca/2020-03-17-1569-Number-of-Ways-to-Reorder-Array-to-Get-Same-BST/
+*/
 
 #define ll long long
 #define MOD 1000000007
