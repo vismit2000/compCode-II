@@ -6,8 +6,7 @@ using namespace std;
 #define MOD 1000000007
 #define boost ios_base ::sync_with_stdio(0); cin.tie(0);
 
-int main()
-{
+int main() {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
@@ -19,5 +18,4 @@ int main()
     while(t--){
 
     }
-    return 0;
 }
