@@ -11,14 +11,11 @@ public:
             Y.insert(rectangle[1]); Y.insert(rectangle[3]);
         }
         vector < int > imapx (X.begin(), X.end());
-        vector < int > imapy (Y.begin(), Y.end());
-        
+        vector < int > imapy (Y.begin(), Y.end()); 
         
         map < int, int > mapx, mapy;
-        for(int i = 0; i < imapx.size(); i++)
-            mapx[imapx[i]] = i;
-        for(int i = 0; i < imapy.size(); i++)
-            mapy[imapy[i]] = i;
+        for(int i = 0; i < imapx.size(); i++) mapx[imapx[i]] = i;
+        for(int i = 0; i < imapy.size(); i++) mapy[imapy[i]] = i;
         
         vector < vector < bool > > grid (imapx.size(), vector < bool > (imapy.size(), false));
         for(auto rectangle : rectangles)
