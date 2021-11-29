@@ -41,6 +41,10 @@ class DisjointSets{
 class DisjointSets {
     unordered_map < int, int > parent, rnk;
 public:
+    DisjointSets(int n) { 
+        for (int i = 0; i < n; i++) rnk[i] = 0, parent[i] = i; 
+    } 
+    
     int findParent(int u){ 
         if (!parent.count(u)) parent[u] = u;
         if (u != parent[u]) parent[u] = findParent(parent[u]); 
