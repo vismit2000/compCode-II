@@ -1,66 +1,35 @@
-class DisjointSets{ 
-    int *parent, *rnk; 
-    int n; 
- public: 
-    DisjointSets(int n) { 
-        this->n = n; 
-        parent = new int[n+1]; 
-        rnk = new int[n+1]; 
- 
-        for (int i = 0; i <= n; i++) { 
-            rnk[i] = 0; 
-            parent[i] = i; 
-        } 
-    } 
-  
-    // Find the parent of a node 'u' - Path Compression 
-    int findParent(int u){ 
-        if (u != parent[u]) 
-            parent[u] = findParent(parent[u]); 
-        return parent[u]; 
-    } 
-    
-    // Union by rank
-    void merge(int x, int y){ 
-        x = findParent(x), y = findParent(y); 
-  
-        // Make tree with smaller height a subtree of the other tree
-        if (rnk[x] > rnk[y]) 
-            parent[y] = x; 
-        else // If rnk[x] <= rnk[y] 
-            parent[x] = y; 
-  
-        if (rnk[x] == rnk[y]) 
-            rnk[y]++; 
-    } 
-}; 
-
-
-// Better:
-
 class DisjointSets {
-    unordered_map < int, int > parent, rnk;
+    int n;
+    vector < int > parent, rank;
 public:
-    DisjointSets(int n) { 
-        for (int i = 0; i < n; i++) rnk[i] = 0, parent[i] = i; 
+    DisjointSets(int n) {
+        this->n = n;
+        rank.resize(n), parent.resize(n);
+        for (int i = 0; i < n; i++) rank[i] = 0, parent[i] = i; 
     } 
     
-    int findParent(int u){ 
-        if (!parent.count(u)) parent[u] = u;
-        if (u != parent[u]) parent[u] = findParent(parent[u]); 
-        return parent[u]; 
+    int findParent(int u){
+        if (u == parent[u]) return u;
+        return parent[u] = findParent(parent[u]);
     } 
     
     void merge(int x, int y){ 
-        x = findParent(x), y = findParent(y); 
-  
-        // Make tree with smaller height a subtree of the other tree
-        if (rnk[x] > rnk[y]) 
-            parent[y] = x; 
-        else // If rnk[x] <= rnk[y] 
-            parent[x] = y; 
-  
-        if (rnk[x] == rnk[y]) 
-            rnk[y]++; 
+        int rootX = findParent(x), rootY = findParent(y);
+        
+        if (rootX != rootY) { // Make tree with smaller height a subtree of the other tree
+            if (rank[rootX] > rank[rootY]) parent[rootY] = rootX;
+            else if (rank[rootX] < rank[rootY]) parent[rootX] = rootY;
+            else parent[rootY] = rootX, rank[rootX] += 1;
+        }
+    }
+    
+    bool connected(int x, int y) {
+        return findParent(x) == findParent(y);
+    }
+    
+    int numComponents(){
+        int conn = 0;
+        for(int i = 0; i < n; i++) if(parent[i] == i) conn++;
+        return conn;
     }
 };
