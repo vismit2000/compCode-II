@@ -1,0 +1,11 @@
+Day 20, 2023
+
+    dot -Tsvg data.dot > output.svg
+
+Day 25, 2023
+
+    import networkx as nx
+    import matplotlib.pyplot as plt
+    plt.rcParams["figure.figsize"] = (25, 25)
+    nx.draw(G, with_labels=True, font_size=6, node_size=100)
+    plt.savefig("foo.svg")

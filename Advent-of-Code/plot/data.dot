@@ -1,0 +1,122 @@
+digraph {
+
+    rx [shape=trapezium]
+    qp [shape=diamond]
+    qp -> ng, pl
+    mq [shape=diamond]
+    mq -> zz
+    lq [shape=diamond]
+    lq -> zg
+    jc [shape=invhouse]
+    jc -> ch, lx, nv, ml, lq, bs
+    td [shape=diamond]
+    td -> fd, jl
+    xs [shape=diamond]
+    xs -> td, fd
+    dg [shape=diamond]
+    dg -> jc, rd
+    km [shape=diamond]
+    km -> rg, hm
+    zc [shape=diamond]
+    zc -> gj
+    pz [shape=diamond]
+    pz -> qh, fd
+    gj [shape=diamond]
+    gj -> dl
+    zg [shape=diamond]
+    zg -> jc, vn
+    rd [shape=diamond]
+    rd -> jc
+    mm [shape=diamond]
+    mm -> xx, hm
+    th [shape=invhouse]
+    th -> cn
+    gt [shape=diamond]
+    gt -> dk, pl
+    hm [shape=invhouse]
+    hm -> kl, gh, tl, xx, zq
+    bs [shape=diamond]
+    bs -> zv
+    cz [shape=diamond]
+    cz -> qp
+    tl [shape=diamond]
+    tl -> vg
+    hv [shape=diamond]
+    hv -> xd
+    ml [shape=diamond]
+    ml -> bs, jc
+    bc [shape=diamond]
+    bc -> pl
+    xm [shape=diamond]
+    xm -> jc, lx
+    vp [shape=diamond]
+    vp -> fd, hv
+    broadcaster [shape=invtrapezium]
+    broadcaster -> kl, ml, xs, jn
+    tx [shape=diamond]
+    tx -> xt, hm
+    qf [shape=diamond]
+    qf -> bf, hm
+    xt [shape=diamond]
+    xt -> zq, hm
+    zv [shape=diamond]
+    zv -> xm, jc
+    vg [shape=diamond]
+    vg -> hm, mm
+    zz [shape=diamond]
+    zz -> fd, pz
+    xd [shape=diamond]
+    xd -> fd, lt
+    kl [shape=diamond]
+    kl -> hm, tx
+    lx [shape=diamond]
+    lx -> nv
+    pl [shape=invhouse]
+    pl -> cz, gj, sb, sv, jn, zc, dl
+    bj [shape=diamond]
+    bj -> fd
+    bf [shape=diamond]
+    bf -> hm
+    jn [shape=diamond]
+    jn -> pl, sb
+    zm [shape=diamond]
+    zm -> lq, jc
+    sv [shape=invhouse]
+    sv -> cn
+    lt [shape=diamond]
+    lt -> mq, fd
+    xx [shape=diamond]
+    xx -> km
+    rg [shape=diamond]
+    rg -> hm, qf
+    sb [shape=diamond]
+    sb -> zc
+    ng [shape=diamond]
+    ng -> gt, pl
+    qh [shape=diamond]
+    qh -> bj, fd
+    dl [shape=diamond]
+    dl -> rj
+    dk [shape=diamond]
+    dk -> pl, bc
+    vn [shape=diamond]
+    vn -> jc, dg
+    gh [shape=invhouse]
+    gh -> cn
+    nv [shape=diamond]
+    nv -> zm
+    fd [shape=invhouse]
+    fd -> jl, hv, xs, mq, th
+    ch [shape=invhouse]
+    ch -> cn
+    cn [shape=invhouse]
+    cn -> rx
+    zq [shape=diamond]
+    zq -> tl
+    rj [shape=diamond]
+    rj -> cz, pl
+    jl [shape=diamond]
+    jl -> vp
+
+
+}
