@@ -8,19 +8,18 @@ using namespace std;
 #define MOD 1000000007
 #define boost ios_base ::sync_with_stdio(0); cin.tie(0);
 
-map < pair < ll, ll >, ll > dp;
+ll dp[1 << 20][20];
 
 ll tsp(ll mask, ll pos, ll n, vector < vector < ll > > &v){
     if(mask == (1 << n) - 1) return pos == n-1 ? 1: 0;
-    if(dp.count({mask, pos})) return dp[{mask, pos}];
+    if(dp[mask][pos] != -1) return dp[mask][pos];
     ll ans = 0;
     for(auto i: v[pos]){
         if((mask & (1 << i)) == 0)
             ans = (ans + tsp(mask | (1 << i), i, n, v)) % MOD;
     }
-    return dp[{mask, pos}] = ans;
+    return dp[mask][pos] = ans;
 }
-
 
 int main() {
 // #ifndef ONLINE_JUDGE
@@ -35,5 +34,6 @@ int main() {
         cin >> a >> b;
         v[a - 1].push_back(b - 1);
     }
+    memset(dp, -1, sizeof(dp));
     cout << tsp(1, 0, n, v) << endl;
 }
