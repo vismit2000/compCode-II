@@ -11,10 +11,10 @@ using namespace std;
 map < pair < ll, ll >, ll > dp;
 
 ll tsp(ll mask, ll pos, ll n, vector < vector < ll > > &v){
-    if(mask == (1 << n) - 1 && pos == n - 1) return 1;
+    if(mask == (1 << n) - 1) return pos == n-1 ? 1: 0;
     if(dp.count({mask, pos})) return dp[{mask, pos}];
     ll ans = 0;
-    for(int i = 0; i < n; i++){
+    for(auto i: v[pos]){
         if((mask & (1 << i)) == 0)
             ans = (ans + tsp(mask | (1 << i), i, n, v)) % MOD;
     }
