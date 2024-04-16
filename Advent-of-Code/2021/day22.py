@@ -1,4 +1,4 @@
-# Coordinate compression
+# 3-D Coordinate compression
 
 content = open("input.txt", "r").read()
 
