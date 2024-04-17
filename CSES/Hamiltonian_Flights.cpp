@@ -15,17 +15,20 @@ ll tsp(ll mask, ll pos, ll n, vector < vector < ll > > &v){
     if(dp[mask][pos] != -1) return dp[mask][pos];
     ll ans = 0;
     for(auto i: v[pos]){
-        if((mask & (1 << i)) == 0)
+        if((mask & (1 << i)) == 0){
+            // skip the current iteration if the next node is the last node and not all other nodes have been visited
+            if(i == n-1 && __builtin_popcount(mask) != n-1) continue;
             ans = (ans + tsp(mask | (1 << i), i, n, v)) % MOD;
+        }
     }
     return dp[mask][pos] = ans;
 }
 
 int main() {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
 
     ll n, m; cin >> n >> m;
     vector < vector < ll > > v(n);
